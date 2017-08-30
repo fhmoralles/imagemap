@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="imageMap.js"></script>
+	</head>
+	
+	<body style="overflow: hidden; margin: 0px;">
+		
+		<div id="botoes" style="position: absolute;">
+			<button type="button" id="removeMarker" onclick="removeNext()" onmouseover="fTeste()">Remover</button>
+			<button type="button" id="removeMarkers" onclick="removeAll()">Remover All</button>
+		</div>
+		
+		<div id="mapa"></div>
+		
+		<script>
+			
+			var markers = [];
+			
+			var map = new imagemap.Map({
+				container: 'mapa', 		// container id
+				image: 'mapa_png_primeiro_nivel_avenida.png', 			// stylesheet location
+				size: [4660, 3050], 	// starting position [lng, lat]
+				zoom: 9, 				// starting zoom
+				nivel: 19               // nivel zoom
+			});			
+			
+			var marker1 = map.addMarker({
+				image: 'marker_red.png',
+				position: [680, 720]
+			});
+			markers[0] = marker1;
+			
+			var marker2 = map.addMarker({
+				image: 'marker_red.png',
+				position: [4000, 1042]
+			});
+			markers[1] = marker2;
+
+			var marker3 = map.addMarker({
+				image: 'marker_red.png',
+				position: [2155, 2323]
+			});
+			markers[2] = marker3;
+
+			var marker4 = map.addMarker({
+				image: 'marker_red.png',
+				position: [2160, 1245],
+				onclick: function() {
+					console.log(this.id);
+					alert("Olá " + this.id);
+				}
+			});
+			markers[3] = marker4;
+
+			function removeNext() {
+			
+				for(var x in markers) {
+					map.removeMarker(markers[x].id);
+					markers.splice(x, 1);
+					break;
+				}
+				
+				console.log(markers);
+			}
+			
+			function removeAll() {
+				map.removeMarkers();
+				markers = [];
+			}
+			
+ 		</script>
+	</body>
+</html>
