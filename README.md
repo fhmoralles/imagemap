@@ -26,8 +26,8 @@ var map = new imagemap.Map({
 
 <table>
   <tr>
-  <td>Atribute</td>
-  <td>Explanation</td>
+  <td><b>Atribute</b></td>
+  <td><b>Explanation</b></td>
   </tr>
   <tr>
   <td>container</td>
@@ -60,8 +60,8 @@ var marker1 = map.addMarker({
 ```
 <table>
   <tr>
-  <td>Atribute</td>
-  <td>Explanation</td>
+  <td><b>Atribute</b></td>
+  <td><b>Explanation</b></td>
   </tr>
   <tr>
   <td>image</td>
