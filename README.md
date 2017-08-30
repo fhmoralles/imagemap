@@ -39,7 +39,7 @@ var map = new imagemap.Map({
   </tr>
   <tr>
   <td>size</td>
-  <td>Imagem original size [ W, H ]</td>
+  <td>Image original size [ width, height ]</td>
   </tr>
   <tr>
   <td>zoom</td>
@@ -69,7 +69,7 @@ var marker1 = map.addMarker({
   </tr>
   <tr>
   <td>position</td>
-  <td>Marker position on original imagem [ Left, Top ]</td>
+  <td>Marker position on original imagem [ left, top ]</td>
   </tr>
   <tr>
   <td>width</td>
