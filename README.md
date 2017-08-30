@@ -10,7 +10,7 @@ imagemap is a Javascript library for work with image as map. jQuery is required.
 1. Import JQuery `<script type="text/javascript" src="jquery.min.js"></script>`
 2. Import ImageMap javascript file `<script type="text/javascript" src="imageMap.js"></script>`
 
-# Example
+# Examples
 
 1. Creating a map
 
@@ -90,6 +90,57 @@ var marker1 = map.addMarker({
   <tr>
   <td>onclick</td>
   <td>Marker onclick event</td>
+  </tr>
+</table>
+
+3. Update a marker
+```js
+map.addMarker({
+  id: markerSelected.id, 
+  image: "path/to/new_image.png", 
+  width: 20,
+  height: 20
+});
+```
+<table>
+  <tr>
+  <td><b>Atribute</b></td>
+  <td><b>Explanation</b></td>
+  </tr>
+  <tr>
+  <td>image</td>
+  <td>Makert path to image</td>
+  </tr>
+  <tr>
+  <td>position</td>
+  <td>Marker position on original imagem [ Left, Top ]</td>
+  </tr>
+  <tr>
+  <td>width</td>
+  <td>Marker width</td>
+  </tr>
+  <tr>
+  <td>height</td>
+  <td>Marker height</td>
+  </tr>
+  <tr>
+  <td>onclick</td>
+  <td>Marker onclick event</td>
+  </tr>
+</table>
+
+3. Remove a marker
+```js
+map.removeMarker(markerSelected.id);
+```
+<table>
+  <tr>
+  <td><b>Atribute</b></td>
+  <td><b>Explanation</b></td>
+  </tr>
+  <tr>
+  <td>id</td>
+  <td>Id marker</td>
   </tr>
 </table>
 
