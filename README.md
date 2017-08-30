@@ -95,7 +95,7 @@ var marker1 = map.addMarker({
 
 3. Update a marker
 ```js
-map.addMarker({
+map.updateMarker({
   id: markerSelected.id, 
   image: "path/to/new_image.png", 
   width: 20,
