@@ -13,13 +13,49 @@ imagemap is a Javascript library for work with image as map. jQuery is required.
 # Example
 
 1. Creating a map
+
 ```js
 var map = new imagemap.Map({
   container: 'map',
-  image: 'map_iamgem.png',
+  image: 'path/to/image/map_image.png',
   size: [4660, 3050],
   zoom: 9,
   nivel: 19
+});
+```
+
+<table>
+  <tr>
+  <td>Atribute</td>
+  <td>Explanation</td>
+  </tr>
+  <tr>
+  <td>container</td>
+  <td>Div to create map</td>
+  </tr>
+  <tr>
+  <td>image</td>
+  <td>Path to image</td>
+  </tr>
+  <tr>
+  <td>size</td>
+  <td>Imagem original size [ W, H ]</td>
+  </tr>
+  <tr>
+  <td>zoom</td>
+  <td>Zoom imagem start</td>
+  </tr>
+  <tr>
+  <td>nivel</td>
+  <td>Max zoom level</td>
+  </tr>
+</table>
+
+2. Creating a marker
+```js
+var marker1 = map.addMarker({
+  image: 'marker_red.png',
+  position: [680, 720]
 });
 ```
 <table>
@@ -27,9 +63,39 @@ var map = new imagemap.Map({
   <td>Atribute</td>
   <td>Explanation</td>
   </tr>
+  <tr>
+  <td>image</td>
+  <td>Makert path to image</td>
+  </tr>
+  <tr>
+  <td>position</td>
+  <td>Marker position on original imagem [ Left, Top ]</td>
+  </tr>
+  <tr>
+  <td>width</td>
+  <td>Marker width</td>
+  </tr>
+  <tr>
+  <td>height</td>
+  <td>Marker height</td>
+  </tr>
+  <tr>
+  <td>reference</td>
+  <td>Users value control</td>
+  </tr>
+  <tr>
+  <td>description</td>
+  <td>Users description</td>
+  </tr>
+  <tr>
+  <td>onclick</td>
+  <td>Marker onclick event</td>
+  </tr>
 </table>
 
 # Authros
+**Fernando Moralles**
++ [https://www.linkedin.com/in/fhmoralles](https://www.linkedin.com/in/fhmoralles)
 
 # Copyright
 
