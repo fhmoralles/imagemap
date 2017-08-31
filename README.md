@@ -1,5 +1,5 @@
 # imagemap
-imagemap is a Javascript library for work with image as map. jQuery is required. The goal is to create a simple core library that can be customized and extended.
+imagemap is a Javascript library for work with image as map. jQuery is required. It is possible to zoom on image and create clickable markers. See the demonstrations.
 
 # Current version
 0.0.5.0
