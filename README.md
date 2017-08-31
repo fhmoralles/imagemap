@@ -5,6 +5,7 @@ imagemap is a Javascript library for work with image as map. jQuery is required.
 0.0.5.0
 
 # Demo
+www.safeprk.com.br/imagemap/imageMap.html
 
 # Quick Start
 1. Import JQuery `<script type="text/javascript" src="jquery.min.js"></script>`
