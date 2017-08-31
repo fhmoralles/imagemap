@@ -7,22 +7,26 @@
 	<body style="overflow: hidden; margin: 0px;">
 		
 		<div id="botoes" style="position: absolute;">
-			<button type="button" id="removeMarker" onclick="removeNext()">Remover</button>
-			<button type="button" id="removeMarkers" onclick="removeAll()">Remover All</button>
+			<button type="button" id="addMarker" onclick="addMarker()">Add</button>
+			<button type="button" id="removeMarker" onclick="removeNext()">Remove</button>
+			<button type="button" id="removeMarkers" onclick="removeAll()">Remove All</button>
 		</div>
 		
 		<div id="mapa"></div>
 		
 		<script>
 			
+			var lAux = 1000;
+			var tAux = 1000;
+			
 			var markers = [];
 			
 			var map = new imagemap.Map({
 				container: 'mapa', 		// container id
-				image: 'mapa_png_primeiro_nivel_avenida.png', 			// stylesheet location
-				size: [4660, 3050], 	// starting position [lng, lat]
-				zoom: 9, 				// starting zoom
-				nivel: 19               // nivel zoom
+				image: '2_no_clouds_16k.jpg', 			// stylesheet location
+				size: [16200, 8100], 	// starting position [lng, lat]
+				zoom: 0, 				// starting zoom
+				nivel: 30               // nivel zoom
 			});			
 			
 			var marker1 = map.addMarker({
@@ -48,25 +52,44 @@
 				position: [2160, 1245],
 				onclick: function() {
 					console.log(this.id);
-					alert("Olá " + this.id);
+					alert("Hello " + this.id);
 				}
 			});
 			markers[3] = marker4;
 
 			function removeNext() {
-			
+
+			    lAux = 1000;
+				tAux = 1000;
+				
 				for(var x in markers) {
 					map.removeMarker(markers[x].id);
 					markers.splice(x, 1);
 					break;
 				}
 				
-				console.log(markers);
 			}
 			
 			function removeAll() {
+			    
+			    lAux = 1000;
+				tAux = 1000;
+				
 				map.removeMarkers();
 				markers = [];
+			}
+
+			function addMarker() {
+				
+    			var marker3 = map.addMarker({
+    
+    				image: 'marker_red.png',
+    				position: [ lAux, tAux ]
+    			});
+				markers[markers.length+1] = marker3;
+				lAux += 1000;
+				tAux += 1000;
+				
 			}
 			
  		</script>

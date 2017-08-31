@@ -57,6 +57,7 @@ function(f){
 			var e = window.event || e; // old IE support
 			var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
 			
+			console.log(delta);
 			zoom = zoom + delta;
 			setZoom(delta);
 		}
@@ -187,8 +188,6 @@ function(f){
 			newmarker.id = "img" + new Date().getTime();
 			newmarker.image = object.image;
 			newmarker.position = object.position;
-			newmarker.width = object.width;
-			newmarker.height = object.height;
 			newmarker.onclick = object.onclick;
 			newmarker.reference = object.reference;
 			newmarker.description = object.description;
@@ -212,6 +211,9 @@ function(f){
 				wAux = object.width;
 			if(object.height != null && object.height != undefined)
 				hAux = object.height;
+			
+			newmarker.width = wAux;
+			newmarker.height = hAux;
 			
 			$("#"+container).append(imgmarker);
 			$("#"+imgmarker.id).css("width", wAux);
@@ -281,8 +283,12 @@ function(f){
 		//
 		function reloadMarkers() {
 			
+			console.log('reloadMarkers');
+			
 			for(var x in markers) {
 
+				console.log(markers[x]);
+				
 				var atualMarginLeft = parseInt($("#imgmapa").css("marginLeft").replace("px", ""));
 				var atualMarginTop = parseInt($("#imgmapa").css("marginTop").replace("px", ""));
 				var atualWidth = parseInt($("#imgmapa").css("width").replace("px", ""));
@@ -292,6 +298,7 @@ function(f){
 				markers[x].top = parseInt(parseFloat(markers[x].position[1]/size[1]) * atualHeight) + atualMarginTop + ( (-1) * (markers[x].height/2) );
 				
 				//changeMapPosition(markers[x].left, markers[x].top);
+				console.log(markers[x]);
 				$("#"+markers[x].id).css("left", markers[x].left);
 				$("#"+markers[x].id).css("top", markers[x].top);
 				
